@@ -73,6 +73,7 @@ public class Tarea_3 {
                 case 6:
                     // Constructores de la clase Meses
                     pila.mostrarPila();
+                    
                     break;
                 case 7:
                     // Constructores de la clase Meses
