@@ -13,6 +13,9 @@ import java.util.Scanner;
 public class Tarea_3 {
     Scanner scanner = new Scanner(System.in);
     int opcion = 0;
+    int tamano=0;
+    private int vectorPila[];
+    
     public void menuPrincipal(){
         do { //Menu principal
             System.out.println("----- MENÚ PRINCIPAL -----");
@@ -31,7 +34,9 @@ public class Tarea_3 {
             switch (opcion) {
                 case 1:
                     // Constructores de clase Cliente
-                    
+                    System.out.println("Indique el tamaño de la pila");
+                    tamano=scanner.nextInt();
+                    Pila pila = new Pila(tamano);
                     break;
                 case 2:
                     // Constructores de la clase Meses
