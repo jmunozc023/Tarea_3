@@ -48,6 +48,7 @@ public class Pila {
         Pila pilaBackup = new Pila(tamano());
         while (pilaVacia()==false) {
             aux= pop();
+            System.out.println(aux);
             if (pilaBackup.pilaLlena(tamano())==false) {
                 pilaBackup.push(aux);
             } else {
@@ -56,7 +57,11 @@ public class Pila {
         }
         while (pilaVacia()==false) {
             aux= pop();
-            System.out.println(aux);
+            if (pilaBackup.pilaLlena(tamano())==false) {
+                pilaBackup.push(aux);
+            } else {
+                System.out.println("Backup listo.");
+            }
         }
     }
     public void extFondo(){
