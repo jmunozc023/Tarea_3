@@ -36,7 +36,7 @@ public class Pila {
     public int pop(){
         int eliminar =0;
         if (top==0) {
-            System.out.println("pila vacia");
+            System.out.println("La pila esta vacia.");
         } else {
             eliminar = vectorPila[top-1];
             top--;
@@ -44,8 +44,18 @@ public class Pila {
         return eliminar;
     }
     public void mostrarPila(){
+        int aux=0;
+        Pila pilaBackup = new Pila(tamano());
         while (pilaVacia()==false) {
-            int aux= pop();
+            aux= pop();
+            if (pilaBackup.pilaLlena(tamano())==false) {
+                pilaBackup.push(aux);
+            } else {
+                System.out.println("Backup listo.");
+            }
+        }
+        while (pilaVacia()==false) {
+            aux= pop();
             System.out.println(aux);
         }
     }
@@ -67,7 +77,7 @@ public class Pila {
             if (pilaDos.pilaLlena(tamano())==false) {
                 pilaDos.push(aux);
             } else {
-                System.out.println("Esta llena");
+                System.out.println("La pila esta llena.");
             }
         }
     }

@@ -11,12 +11,19 @@ import java.util.Scanner;
  * @author josep
  */
 public class Tarea_3 {
+
     Scanner scanner = new Scanner(System.in);
     int opcion = 0;
-    int tamano=0;
+    int tamano = 0;
     private int vectorPila[];
-    
-    public void menuPrincipal(){
+    Pila pila; 
+    public void inicializarPila() {
+        System.out.println("Indique el tamaño de la pila");
+        tamano = scanner.nextInt();
+        pila = new Pila(tamano);
+    }
+
+    public void menuPrincipal() {
         do { //Menu principal
             System.out.println("----- MENÚ PRINCIPAL -----");
             System.out.println("1. Inicializar Pila");
@@ -34,37 +41,46 @@ public class Tarea_3 {
             switch (opcion) {
                 case 1:
                     // Constructores de clase Cliente
-                    System.out.println("Indique el tamaño de la pila");
-                    tamano=scanner.nextInt();
-                    Pila pila = new Pila(tamano);
+                    inicializarPila();
                     break;
                 case 2:
                     // Constructores de la clase Meses
-                    
+                    if (pila.pilaVacia()== true) {
+                        System.out.println("La pila esta vacia. ");
+                    } else {
+                        System.out.println("La pila no esta vacia.");
+                    }
                     break;
                 case 3:
                     // Constructores de la clase Meses
-                    
+                    if (pila.pilaLlena(tamano)==true) {
+                        System.out.println("La pila esta llena. ");
+                    } else {
+                        System.out.println("La pila no esta llena.");
+                    }
                     break;
                 case 4:
                     // Constructores de la clase Meses
-                    
+                    int dato=0;
+                    System.out.println("Ingrese el valor que desea ingresar a la pila: ");
+                    dato= scanner.nextInt();
+                    pila.push(dato);
                     break;
                 case 5:
                     // Constructores de la clase Meses
-                    
+                    System.out.println("El valor eliminado es: "+ pila.pop());
                     break;
                 case 6:
                     // Constructores de la clase Meses
-                    
+                    pila.mostrarPila();
                     break;
                 case 7:
                     // Constructores de la clase Meses
-                    
+                    pila.extFondo();
                     break;
                 case 8:
                     // Constructores de la clase Meses
-                    
+                    pila.pasarDatos();
                     break;
                 case 9:
                     // Opcion de salida del ciclo
@@ -75,12 +91,13 @@ public class Tarea_3 {
                     break;
             }
             System.out.println();
-        } while (opcion != 3);
+        } while (opcion != 9);
 
-    
     }
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        Tarea_3 tarea3 = new Tarea_3();
+        tarea3.menuPrincipal();
     }
-    
+
 }
