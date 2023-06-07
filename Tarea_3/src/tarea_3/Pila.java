@@ -10,15 +10,15 @@ package tarea_3;
  */
 public class Pila {
 
-    private int vectorPila[];
-    private int top;
+    private int vectorPila[]; //Variable de la pila
+    private int top; //Variable de la cabeza de la pila
 
-    public Pila(int tamano) {
+    public Pila(int tamano) { //Constructos de la pila
         vectorPila = new int[tamano];
         top = 0;
     }
 
-    public boolean pilaVacia() {
+    public boolean pilaVacia() { //Metodo para indicar si la pila esta vacia
         if (top == 0) {
             return true;
         } else {
@@ -26,7 +26,7 @@ public class Pila {
         }
     }
 
-    public boolean pilaLlena(int tamano) {
+    public boolean pilaLlena(int tamano) { //Metodo para indicar si la pila esta llena
         if (top == tamano) {
             return true;
         } else {
@@ -34,12 +34,12 @@ public class Pila {
         }
     }
 
-    public void push(int dato) {
+    public void push(int dato) { //Metodo Push de la pila
         vectorPila[top] = dato;
         top++;
     }
 
-    public int pop() {
+    public int pop() { //Metodo Pop de la pila
         int eliminar = 0;
         if (top == 0) {
             System.out.println("La pila esta vacia.");
@@ -50,7 +50,7 @@ public class Pila {
         return eliminar;
     }
 
-    public void mostrarPila() {
+    public void mostrarPila() { //Metodo Mostrar pila sin perder los datos originales
         int aux = 0;
         Pila pilaBackup = new Pila(tamano());
         while (pilaVacia() == false) {
@@ -68,7 +68,7 @@ public class Pila {
         }
     }
 
-    public void extFondo() {
+    public void extFondo() { //Metodo para mostrar el valor del fondo
         int aux = 0;
         Pila pilaBackup = new Pila(tamano());
         while (pilaVacia() == false) {
@@ -86,11 +86,11 @@ public class Pila {
         }
     }
 
-    public int tamano() {
+    public int tamano() { //Metodo para definir el tamaño de la pila
         return vectorPila.length;
     }
 
-    public void pasarDatos() {
+    public void pasarDatos() { //Metodo para pasar los datos de una pila a otra sin perderlos
         int aux = 0;
         Pila pilaDos = new Pila(tamano());
         while (pilaVacia() == false) {

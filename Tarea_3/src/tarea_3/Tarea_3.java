@@ -17,13 +17,13 @@ public class Tarea_3 {
     int tamano = 0;
     private int vectorPila[];
     Pila pila; 
-    public void inicializarPila() {
+    public void inicializarPila() { //Metodo para inicializar la pila
         System.out.println("Indique el tamaño de la pila");
         tamano = scanner.nextInt();
         pila = new Pila(tamano);
     }
 
-    public void menuPrincipal() {
+    public void menuPrincipal() { //Menu principal con todas sus opciones
         do { //Menu principal
             System.out.println("----- MENÚ PRINCIPAL -----");
             System.out.println("1. Inicializar Pila");
@@ -40,11 +40,11 @@ public class Tarea_3 {
 
             switch (opcion) {
                 case 1:
-                    // Constructores de clase Cliente
+                    // Caso para inicializar la pila
                     inicializarPila();
                     break;
                 case 2:
-                    // Constructores de la clase Meses
+                    // Caso para verificar si la pila esta vacia
                     if (pila.pilaVacia()== true) {
                         System.out.println("La pila esta vacia. ");
                     } else {
@@ -52,7 +52,7 @@ public class Tarea_3 {
                     }
                     break;
                 case 3:
-                    // Constructores de la clase Meses
+                    // Caso para verificar si la pila esta llena
                     if (pila.pilaLlena(tamano)==true) {
                         System.out.println("La pila esta llena. ");
                     } else {
@@ -60,26 +60,26 @@ public class Tarea_3 {
                     }
                     break;
                 case 4:
-                    // Constructores de la clase Meses
+                    // Caso para hacer push a un valor de la pila
                     int dato=0;
                     System.out.println("Ingrese el valor que desea ingresar a la pila: ");
                     dato= scanner.nextInt();
                     pila.push(dato);
                     break;
                 case 5:
-                    // Constructores de la clase Meses
+                    // Caso para hacer pop de un valor en la pila
                     System.out.println("El valor eliminado es: "+ pila.pop());
                     break;
                 case 6:
-                    // Constructores de la clase Meses
+                    // Caso para Mostrar la pila
                     pila.mostrarPila();
                     break;
                 case 7:
-                    // Constructores de la clase Meses
+                    // Caso para extraer el valor del fondo
                     pila.extFondo();
                     break;
                 case 8:
-                    // Constructores de la clase Meses
+                    // Caso para pasar los datos de una pila a otra
                     pila.pasarDatos();
                     break;
                 case 9:
@@ -96,8 +96,8 @@ public class Tarea_3 {
     }
 
     public static void main(String[] args) {
-        Tarea_3 tarea3 = new Tarea_3();
-        tarea3.menuPrincipal();
+        Tarea_3 tarea3 = new Tarea_3(); 
+        tarea3.menuPrincipal(); //Constructor del menu principal
     }
 
 }
